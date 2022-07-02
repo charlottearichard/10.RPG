@@ -1,0 +1,26 @@
+{
+  "name": "10.rpg",
+  "version": "1.0.0",
+  "description": "Challenge 10",
+  "main": "app.js",
+  "scripts": {
+    "test": "Test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/charlottearichard/10.RPG.git"
+  },
+  "keywords": [
+    "RPG",
+    "OOP"
+  ],
+  "author": "Charlotte Ri'Chard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlottearichard/10.RPG/issues"
+  },
+  "homepage": "https://github.com/charlottearichard/10.RPG#readme",
+  "dependencies": {
+    "inquirer": "^9.0.0"
+  }
+}
