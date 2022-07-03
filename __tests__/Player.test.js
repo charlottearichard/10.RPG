@@ -6,6 +6,8 @@ console.log(new Potion());
 
 const Player = require("../lib/Player.js");
 
+// New Player Object
+
 test("creates a player object", () => {
   const player = new Player("Dove");
 
@@ -19,6 +21,8 @@ test("creates a player object", () => {
   );
 });
 
+// Player stats
+
 test("gets player stats as an object", () => {
   const player = new Player("Dove");
 
@@ -28,6 +32,8 @@ test("gets player stats as an object", () => {
   expect(player.getStatus()).toHaveProperty("agility");
 });
 
+// Plauer inventory
+
 test("gets inventory from player or returns false", () => {
   const player = new Player("Dove");
 
@@ -36,4 +42,38 @@ test("gets inventory from player or returns false", () => {
   player.inventory = [];
 
   expect(player.getInventory()).toEqual(false);
+});
+
+// Player health value
+test("gets player health value", () => {
+  const player = new Player("Dove");
+
+  expect(player.getHealth()).toEqual(
+    expect.stringContaining(player.health.toString())
+  );
+});
+
+// check if player is alive
+test("checks if player is alive", () => {
+  const player = new Player("Dove");
+
+  expect(player.isAlive()).toBeTruthy();
+
+  player.health = 0;
+
+  expect(player.isAlive()).toBeFalsy();
+});
+
+//subtract players health
+test("subtracts from player's health", () => {
+  const player = new Player("Dave");
+  const oldHealth = player.health;
+
+  player.reduceHealth(5);
+
+  expect(player.health).toBe(oldHealth - 5);
+
+  player.reduceHealth(99999);
+
+  expect(player.health).toBe(0);
 });
